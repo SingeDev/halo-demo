@@ -25,7 +25,6 @@ function Card({ cards }) {
 		<>
 			<h1>{card.title}</h1>
 			<p>{card.description}</p>
-			<p>{card.tags.join(', ')}</p>
 			<Image url={card.image1.url} description={card.imageDescription1} />
 			<Image url={card.image2.url} description={card.imageDescription2} />
 			<Image url={card.image3.url} description={card.imageDescription3} />

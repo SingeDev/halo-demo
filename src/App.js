@@ -28,7 +28,6 @@ function App() {
 			id
 			title
 			description
-			tags
 			image1 { url }
 			image2 { url }
 			image3 { url }
