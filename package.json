@@ -1,10 +1,43 @@
 {
+  "name": "halo-demo",
+  "private": true,
+  "license": "<Private>",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
     "lint": "eslint . --cache --fix",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "format": "prettier --loglevel warn --write \"**/*.{js,md}\"",
+    "posttest": "npm run format"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "graphql-request": "1.8.2",
+    "prop-types": "^15.8.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
-    "eslint-config-tamia": "^8.0.1"
+    "eslint-config-tamia": "^8.0.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
