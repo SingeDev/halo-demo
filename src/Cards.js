@@ -6,13 +6,17 @@ function Cards({ cards }) {
 	return (
 		<>
 			<h1>HALO</h1>
-			<ul>
-				{cards.map(({ id, title }) => (
-					<li key={id}>
-						<Link to={`/cards/${id}`}>{title}</Link>
-					</li>
-				))}
-			</ul>
+			{!cards ? (
+				'🦀 Loading...'
+			) : (
+				<ul>
+					{cards.map(({ id, title }) => (
+						<li key={id}>
+							<Link to={`/cards/${id}`}>{title}</Link>
+						</li>
+					))}
+				</ul>
+			)}
 		</>
 	);
 }

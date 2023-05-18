@@ -26,20 +26,14 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				{!cards ? (
-					'🦀 Loading...'
-				) : (
-					<>
-						<Switch>
-							<Route path="/cards/:id">
-								<Card cards={cards} />
-							</Route>
-							<Route path="/">
-								<Cards cards={cards} />
-							</Route>
-						</Switch>
-					</>
-				)}
+				<Switch>
+					<Route path="/cards/:id">
+						<Card cards={cards} />
+					</Route>
+					<Route path="/">
+						<Cards cards={cards} />
+					</Route>
+				</Switch>
 			</Router>
 		</div>
 	);
