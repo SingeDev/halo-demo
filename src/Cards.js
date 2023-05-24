@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
 
 function Body({ cards, errors }) {
 	if (errors.length > 0) {
@@ -27,7 +28,7 @@ function Body({ cards, errors }) {
 function Cards({ cards, errors }) {
 	return (
 		<>
-			<h1>HALO</h1>
+			<Logo height={50} />
 			<Body cards={cards} errors={errors} />
 		</>
 	);
