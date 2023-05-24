@@ -8,6 +8,7 @@ const API_TOKEN = '20e3e3b2-3a04-4af9-a671-7674c206332b';
 
 function App() {
 	const [cards, setCards] = useState(null);
+	const [errors, setErrors] = useState([]);
 
 	useEffect(() => {
 		const fetchCards = async () => {
@@ -22,7 +23,11 @@ function App() {
 				);
 			}
 			const results = await response.json();
-			setCards(results);
+			if (results.erorrs) {
+				setErrors(results.errors);
+			} else {
+				setCards(results.data);
+			}
 		};
 
 		fetchCards();
@@ -36,7 +41,7 @@ function App() {
 						<Card cards={cards} />
 					</Route>
 					<Route path="/">
-						<Cards cards={cards} />
+						<Cards cards={cards} errors={errors} />
 					</Route>
 				</Switch>
 			</Router>
