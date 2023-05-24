@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Stack, Grid } from 'tamia';
 import { Logo } from './Logo';
+import { Button } from './Button';
 
 function Body({ cards, errors }) {
 	if (errors.length > 0) {
@@ -15,22 +16,22 @@ function Body({ cards, errors }) {
 	}
 
 	return (
-		<ul>
+		<Grid gap="m" gridTemplateColumns="repeat(1fr)" maxWidth={400} mx="auto">
 			{cards.map(({ id, title }) => (
-				<li key={id}>
-					<Link to={`/cards/${id}`}>{title}</Link>
-				</li>
+				<Button key={id} to={`/cards/${id}`}>
+					{title}
+				</Button>
 			))}
-		</ul>
+		</Grid>
 	);
 }
 
 function Cards({ cards, errors }) {
 	return (
-		<>
+		<Stack gap="l">
 			<Logo height={50} />
 			<Body cards={cards} errors={errors} />
-		</>
+		</Stack>
 	);
 }
 

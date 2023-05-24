@@ -1,0 +1,158 @@
+const baseFont = [
+	// Safari for OS X and iOS (San Francisco)
+	'-apple-system',
+	// Windows
+	'"Segoe UI"',
+	// Android
+	'Roboto',
+	// Basic web fallback
+	'"Helvetica Neue"',
+	'Arial',
+	'sans-serif',
+	// Emoji fonts
+	'"Apple Color Emoji"',
+	'"Segoe UI Emoji"',
+	'"Segoe UI Symbol"',
+].join(', ');
+const monospaceFont = [
+	'Monaco',
+	'"DejaVu Sans Mono"',
+	'"Lucida Console"',
+	'monospace',
+].join(', ');
+const space = {
+	0: 0,
+	xxs: '0.125rem', // 2px
+	xs: '0.25rem', // 4px
+	s: '0.5rem', // 8px
+	m: '1rem', // 16px
+	l: '2rem', // 32px
+	xl: '4rem', // 64px
+	xxl: '8rem', // 128px
+	xxxl: '16rem', // 256px
+	'-xxs': '0.125rem', // -2px
+	'-xs': '0.25rem', // -4px
+	'-s': '0.5rem', // -8px
+	'-m': '1rem', // -16px
+	'-l': '2rem', // -32px
+	'-xl': '4rem', // -64px
+	'-xxl': '8rem', // -128px
+	'-xxxl': '16rem', // -256px
+};
+const breakpoints = [
+	'32rem', // 512px
+	'48rem', // 768px
+	'62rem', // 992px
+	'75rem', // 1200px
+];
+const fonts = {
+	base: baseFont,
+	heading: baseFont,
+	pre: monospaceFont,
+	code: monospaceFont,
+};
+const fontSizes = {
+	base: '1rem',
+	xxxxl: '4.2rem',
+	xxxl: '3.2rem',
+	xxl: '2.4rem',
+	xl: '1.8rem',
+	l: '1.3rem',
+	m: '1rem',
+	s: '0.85rem',
+	xs: '0.75rem',
+};
+const colors = {
+	bg: '#fff',
+	base: '#0d1229',
+	border: '#ddd',
+	primary: '#0d1229',
+	hover: '#e7c937',
+	focus: '#f56a00',
+	selection: 'rgb(255,237,117)',
+	selectionAlpha: 'rgba(255,237,117,0.25)', // TODO
+};
+const fontWeights = {
+	base: 400,
+	heading: 300,
+	bold: 800,
+};
+const lineHeights = {
+	base: 1.5,
+	heading: 1.1,
+	pre: 1.3,
+};
+const letterSpacings = {
+	base: 0,
+	heading: 0,
+};
+const borders = {
+	focus: '3px solid',
+	button: '2px solid',
+};
+const radii = {
+	button: '3px',
+};
+const headingBaseStyles = {
+	color: 'base',
+	fontFamily: 'heading',
+	fontWeight: 'heading',
+	lineHeight: 'heading',
+	letterSpacing: 'heading',
+};
+const textBaseStyles = {
+	color: 'base',
+	fontFamily: 'base',
+	fontSize: 'base',
+	fontWeight: 'base',
+	lineHeight: 'base',
+	letterSpacing: 'base',
+};
+
+export default {
+	// Base font size (applied to body)
+	baseFontSize: '1em', // 1em = 16px
+	blockMarginBottom: space.m,
+	headingMarginTop: space.l,
+	listMargin: '1.3em',
+	focusOutlineOffset: '2px',
+	page: {
+		// Body
+		bodyMaxWidth: '75rem',
+		bodyPaddingX: space.m,
+		bodyPaddingY: 0,
+
+		// Content (<Container>)
+		contentMaxWidth: undefined,
+		contentPaddingX: 0,
+		contentPaddingY: 0,
+
+		// Max text column width (<TextContainer>)
+		textMaxWidth: '40rem',
+	},
+	fonts,
+	space,
+	fontSizes,
+	fontWeights,
+	lineHeights,
+	letterSpacings,
+	colors,
+	borders,
+	radii,
+	breakpoints,
+	headingStyles: {
+		1: {
+			...headingBaseStyles,
+			fontSize: 'xxl',
+		},
+	},
+	textStyles: {
+		base: {
+			...textBaseStyles,
+		},
+		description: {
+			...textBaseStyles,
+			fontWeight: fontWeights.bold,
+		},
+	},
+};

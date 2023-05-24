@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { TamiaRoot, Box } from 'tamia';
+import theme from './theme';
 import Cards from './Cards';
 import Card from './Card';
 
@@ -34,18 +36,20 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
-			<Router>
-				<Switch>
-					<Route path="/cards/:id">
-						<Card cards={cards} />
-					</Route>
-					<Route path="/">
-						<Cards cards={cards} errors={errors} />
-					</Route>
-				</Switch>
-			</Router>
-		</div>
+		<TamiaRoot theme={theme}>
+			<Box py="xl">
+				<Router>
+					<Switch>
+						<Route path="/cards/:id">
+							<Card cards={cards} />
+						</Route>
+						<Route path="/">
+							<Cards cards={cards} errors={errors} />
+						</Route>
+					</Switch>
+				</Router>
+			</Box>
+		</TamiaRoot>
 	);
 }
 
