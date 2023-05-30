@@ -41,55 +41,33 @@ Parameters (sent in a request body):
 - `category` (string: see below): situation type (required).
 - `userId` (string): a unique user identifier (required).
 - `lat` / `lon` (float): user location, latitude and longitude (required).
-- `gender` (string: `Femenine`, `Masculine`, or `Diverse`): user gender (optional).
+- `gender` (string: `Feminine`, `Masculine`, or `Diverse`): user gender (optional).
 
 The result will look like this:
 
-```json
+```json5
 {
   "data": [
     {
       "id": "clhoufil2q7730cwbjuym7alt",
       "title": "End the ride",
       "description": "The behavior of the driver seems inappropriate and becomes a threat.",
-      "image1": {
-        "url": "https://media.graphassets.com/bCF4Ots6R76VjzTU6c8X"
+      "images": [
+        {
+        "url": "https://media.graphassets.com/bCF4Ots6R76VjzTU6c8X",
+        "description": "Doors lock, driver becomes threatening",
       },
-      "image2": {
-        "url": "https://media.graphassets.com/69ee6Jq2Q3SY6wBuUJKr"
+        {
+        "url": "https://media.graphassets.com/69ee6Jq2Q3SY6wBuUJKr",
+        "description": "Notify driver of clothing caught in door (imaginary clothing also works)",
       },
-      "image3": {
-        "url": "https://media.graphassets.com/vllD9NVQuq0dDaKjLnZU"
+        {
+        "url": "https://media.graphassets.com/vllD9NVQuq0dDaKjLnZU",
+        "description": "Quietly unfasten seatbelt in preparation",
       },
-      "image4": {
-        "url": "https://media.graphassets.com/4a9YqafSqWvmUWDb0xNQ"
-      },
-      "imageDescription1": "Doors lock, driver becomes threatening",
-      "imageDescription2": "Notify driver of clothing caught in door (imaginary clothing also works)",
-      "imageDescription3": "Quietly unfasten seatbelt in preparation",
-      "imageDescription4": "At stop light when doors unlock, run"
+      ]
     },
-    {
-      "id": "clhovde5xqaxy0aw06089ps0u",
-      "title": "Pressing ",
-      "description": "A person seats next to you, and deliberately makes physical contact on a side",
-      "image1": {
-        "url": "https://media.graphassets.com/oK8rpQRWT6OlLoG05PBL"
-      },
-      "image2": {
-        "url": "https://media.graphassets.com/FnOV4GwPRMin6LVbwYWJ"
-      },
-      "image3": {
-        "url": "https://media.graphassets.com/J8yxua7LTuWgEqLEQvVi"
-      },
-      "image4": {
-        "url": "https://media.graphassets.com/ZIDR1UsjRGWFdbGabVc3"
-      },
-      "imageDescription1": "A person is pressing or making deliberate contact",
-      "imageDescription2": "Reach for something in your front pocket",
-      "imageDescription3": "Turn your elbow down to create space",
-      "imageDescription4": "Reclaim your space"
-    }
+    // More cards
   ]
 }
 ```
@@ -105,6 +83,8 @@ Parameters (sent in a URL):
 Parameters (sent in a request body):
 
 - `userId` (string): a unique user identifier (required).
+- `lat` / `lon` (float): user location, latitude and longitude (required).
+- `gender` (string: `Feminine`, `Masculine`, or `Diverse`): user gender (optional).
 
 The result will look like this:
 
@@ -119,3 +99,16 @@ The result will look like this:
 ### Categories
 
 `MassTransit`, `Car`, `Street`, `Train`, `Bus`, `Platform`.
+
+### Error handling
+
+In case of an error, the response will look like so:
+
+```json
+{
+  "errors": [
+    "code": 104,
+			"message": "Validation error: Required at \"lon\"; Invalid enum value. Expected 'MassTransit' | 'Car' | 'Street' | 'Train' | 'Bus' | 'Platform', received 'Buss' at \"category\""
+  ]
+}
+```
