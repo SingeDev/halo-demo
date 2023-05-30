@@ -36,7 +36,7 @@ See below for the parameters and response types for each endpoint.
 
 Returns a list of relevant cards.
 
-Parameters (sent in a request body):
+Parameters (sent in a query string):
 
 - `category` (string: see below): situation type (required).
 - `userId` (string): a unique user identifier (required).
@@ -80,7 +80,7 @@ Parameters (sent in a URL):
 
 - `id` (string): card ID (required).
 
-Parameters (sent in a request body):
+Parameters (sent in a query string):
 
 - `userId` (string): a unique user identifier (required).
 - `lat` / `lon` (float): user location, latitude and longitude (required).
