@@ -14,7 +14,8 @@ function App() {
 
 	useEffect(() => {
 		const fetchCards = async () => {
-			const response = await fetch(API_ENDPOINT, {
+			const url = `${API_ENDPOINT}?category=Bus&userId=pollero&lat=41.34&lon=2.34`;
+			const response = await fetch(url, {
 				headers: {
 					'X-Auth-Token': API_TOKEN,
 				},
