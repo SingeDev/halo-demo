@@ -47,26 +47,26 @@ The result will look like this:
 
 ```json5
 {
-  "data": [
+  data: [
     {
-      "id": "clhoufil2q7730cwbjuym7alt",
-      "title": "End the ride",
-      "description": "The behavior of the driver seems inappropriate and becomes a threat.",
-      "images": [
+      id: 'clhoufil2q7730cwbjuym7alt',
+      title: 'End the ride',
+      description: 'The behavior of the driver seems inappropriate and becomes a threat.',
+      images: [
         {
-        "url": "https://media.graphassets.com/bCF4Ots6R76VjzTU6c8X",
-        "description": "Doors lock, driver becomes threatening",
-      },
+          url: 'https://media.graphassets.com/bCF4Ots6R76VjzTU6c8X',
+          description: 'Doors lock, driver becomes threatening'
+        },
         {
-        "url": "https://media.graphassets.com/69ee6Jq2Q3SY6wBuUJKr",
-        "description": "Notify driver of clothing caught in door (imaginary clothing also works)",
-      },
+          url: 'https://media.graphassets.com/69ee6Jq2Q3SY6wBuUJKr',
+          description: 'Notify driver of clothing caught in door (imaginary clothing also works)'
+        },
         {
-        "url": "https://media.graphassets.com/vllD9NVQuq0dDaKjLnZU",
-        "description": "Quietly unfasten seatbelt in preparation",
-      },
+          url: 'https://media.graphassets.com/vllD9NVQuq0dDaKjLnZU',
+          description: 'Quietly unfasten seatbelt in preparation'
+        }
       ]
-    },
+    }
     // More cards
   ]
 }
@@ -107,8 +107,10 @@ In case of an error, the response will look like so:
 ```json
 {
   "errors": [
-    "code": 104,
-			"message": "Validation error: Required at \"lon\"; Invalid enum value. Expected 'MassTransit' | 'Car' | 'Street' | 'Train' | 'Bus' | 'Platform', received 'Buss' at \"category\""
+    {
+      "code": 104,
+      "message": "Validation error: Required at \"lon\"; Invalid enum value. Expected 'MassTransit' | 'Car' | 'Street' | 'Train' | 'Bus' | 'Platform', received 'Buss' at \"category\""
+    }
   ]
 }
 ```
