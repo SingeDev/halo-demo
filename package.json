@@ -12,7 +12,6 @@
     "posttest": "npm run format"
   },
   "dependencies": {
-    "graphql-request": "1.8.2",
     "prop-types": "^15.8.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
