@@ -82,6 +82,7 @@ Parameters (sent in a URL):
 
 Parameters (sent in a query string):
 
+- `timestamp` (string, ISO format): date and time when the card was selected (required). We require explicit timestamp to allow apps to cache requests when the app is offline, and send them once the internet is available again.
 - `userId` (string): a unique user identifier (required).
 - `lat` / `lon` (float): user location, latitude and longitude (required).
 - `gender` (string: `Feminine`, `Masculine`, or `Diverse`): user gender (optional).
